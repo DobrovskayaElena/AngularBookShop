@@ -1,0 +1,9 @@
+<div #appTitle>
+  <section class="products_view">
+    <app-book-item
+      *ngFor="let book of books | async; let i = index"
+      [book]="book"
+      [index]="i"
+    ></app-book-item>
+  </section>
+</div>

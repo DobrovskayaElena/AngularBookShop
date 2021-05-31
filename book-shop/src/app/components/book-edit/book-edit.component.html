@@ -1,0 +1,22 @@
+<div>
+    <span>
+      <img
+        src="{{ book.imagePath }}"
+        alt="{{ book.name }}"
+        class="img-responsive"
+        style="max-height: 300px"
+      />
+    </span>
+    <h5 class="list-group-item-heading">{{ book.name }}</h5>
+    <p class="list-group-item-text">{{ book.description }}</p>
+    <p class="list-group-item-text" style="color: black">
+      {{ book.category }}
+    </p>
+    <p class="list-group-item-text">{{ book.price | currency }}</p>
+  </div>
+  <div>
+    <a 
+    style="cursor: pointer;" 
+    (click)="onEdit()"
+    >Edit Book</a>
+  </div>

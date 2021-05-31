@@ -1,0 +1,71 @@
+<ng-container *ngIf="(carts | keyvalue)?.length; else elseBlock">
+  <div class="cart_content">
+    <button (click)="removeAllBooks()">Clear Cart</button>
+  </div>
+  <h3>{{ welcome | uppercase }}</h3>
+  <p>{{ myDate | date: "dd/MM/yyyy" }}</p>
+
+  <div class="select">
+    <p class="select-field">
+      <select name="carts" ngDefaultControl [(ngModel)]="field">
+        <option value="name" >Name</option>
+        <option value="price">Price</option>
+        <option value="count">Count</option>
+      </select>
+    </p>
+    <p class="input-field">
+      <input 
+      type="radio" 
+      value="asc" 
+      ngDefaultControl
+      [(ngModel)]="direction" 
+      />a->z
+    </p>
+    <p class="input-field">
+      <input 
+      type="radio" 
+      value="desc" 
+      [(ngModel)]="direction"
+      ngDefaultControl
+      checked
+      />z->a
+    </p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+        <th>Amount</th>
+        <th></th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <app-cart-item
+        *ngFor="let cart of carts | orderBy: field:direction"
+        [cart]="cart"
+        (changed)="updateDataFromService()"
+      ></app-cart-item>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #elseBlock>
+  <h3>{{ welcome | uppercase }}</h3>
+  <p>{{ myDate | date: "dd/MM/yyyy" }}</p>
+  <div>Your cart is empty at the moment.</div>
+</ng-template>
+
+<div class="total-cart">
+  <h2 appBold>Total:</h2>
+  <p>
+    Total amount: <span>{{ countBooks }}</span>
+  </p>
+  <p>
+    Total sum: <span>{{ totalBooksPrice }}</span>
+  </p>
+  <button (click)="orderBooks()">Order</button>
+</div>

@@ -1,0 +1,11 @@
+<tr appBackground>
+  <td>{{ cart.name }}</td>
+  <td>{{ cart.price | currency }}</td>
+  <td><button (click)="increaseQuantity(cart)">+</button></td>
+  <td><input type="text" [(ngModel)]="cart.count" size="1" /></td>
+  <td><button (click)="decreaseQuantity(cart)">-</button></td>
+  <td>
+    <span>{{ cart.count * cart.price | currency }}</span>
+  </td>
+  <td><button (click)="removeBook(cart)">Delete</button></td>
+</tr>

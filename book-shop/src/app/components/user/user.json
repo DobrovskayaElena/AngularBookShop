@@ -1,0 +1,6 @@
+{
+    "userlist": [
+      { "id": 1, "name": "Mike", "password": 1212, "status": "user" },
+      { "id": 2, "name": "Helen", "password": 1212, "status": "admin" }
+    ]
+  }

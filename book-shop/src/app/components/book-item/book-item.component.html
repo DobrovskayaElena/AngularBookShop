@@ -1,0 +1,20 @@
+<div class="products_card">
+  <div class="product_image">
+    <a href="#"><img [src]="book.imagePath" alt="{{ book.name }}" /></a>
+  </div>
+  <div class="product_info">
+    <a href="#"><h1>{{ book.name }}</h1></a>
+    <p>{{ book.description }}</p>
+    <p style="color: black">
+      {{ book.category }}
+    </p>
+    <p [ngClass]="'textBold'">{{ book.price | currency }}</p>
+    <button class="card button"
+      [disabled]="checkIsAvailable(book)"
+      (click)="addToCart(book)"
+      appClickEvent
+    >
+      Buy
+    </button>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header_books {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #689cd2;
+  color: #fff;
+}
+
+.header_section_books {
+  display: flex;
+  align-items: center;
+}
+
+.header_item_nav {
+  padding: 10px 15px;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.header_item_nav:hover {
+  background-color: #ff9900;
+  border-radius: 4px;
+}
+
+.headerlogo {
+  font-weight: bold;
+}
+
+.header_button {
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+.cart_content {
+  padding-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.total-cart {
+  padding-top: 20px;
+}
+
+.select {
+  display: flex;
+  flex-direction: row;
+}
+
+select {
+  display: block;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  background: none;
+  border: 1px solid black;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1rem;
+}
+
+.select-field {
+  padding-right: 10px;
+}
+
+.input -field {
+  padding-right: 10px;
+}
